@@ -167,7 +167,6 @@ if (heroku.appdir) {
 if (heroku.dockerBuildArgs) {
   heroku.dockerBuildArgs = heroku.dockerBuildArgs
     .split("\n")
-    .map((arg) => `${arg}="${process.env[arg]}"`)
     .join(",");
   heroku.dockerBuildArgs = heroku.dockerBuildArgs
     ? `--arg ${heroku.dockerBuildArgs}`
